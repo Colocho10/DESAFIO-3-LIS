@@ -11,10 +11,10 @@
     <?php
         //Definiendo los valores a utilizar para los cálculos
         define("SALTO","\n");
-        $cad="10 metros";
-        $str="3D";
-        $val=20.5;
-        $num=7;
+        $cad = "10 metros";
+        $str = "3D";
+        $val = 20.5;
+        $num = 7;
 
         //Construyendo el header
         echo "<header>\n";
@@ -29,7 +29,7 @@
         echo "</header>\n";
 
         //Primera operación
-        $concat=$cad + $val;
+        $concat = intval($cad) + $val;
         echo "<section>";
         echo "\n";
         echo "<article>";
@@ -37,15 +37,17 @@
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
 
         //Segunda operación
-        $concat=$str+$num;
+        $concat = intval($str) + $num;
         echo "<article>";
         echo '<p>El valor de $concat=$str+$num es: <span>="'. $str .'"+'. $num .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
         echo '</article>';
         echo "\n";
 
+        //Tercera operación - Removida porque repite la primera operación
+        
         //Cuarta operación
-        $concat=$cad+$num;
+        $concat = intval($cad) + $num;
         echo "<article>";
         echo '<p>El valor de $concat=$cad+$num es: <span>="'. $cad .'"+'. $num .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -53,7 +55,7 @@
         echo "\n";
 
         //Quinta operación
-        $concat=$cad+$str;
+        $concat = intval($cad) + intval($str);
         echo "<article>";
         echo '<p>El valor de $concat=$cad+$str es: <span>="'. $cad .'"+'. $str .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -61,7 +63,7 @@
         echo "\n";
 
         //Sexta operación
-        $concat=$val+$cad;
+        $concat = $val + intval($cad);
         echo "<article>";
         echo '<p>El valor de $concat=$val+$cad es: <span>="'. $val .'"+'. $cad .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -69,7 +71,7 @@
         echo "\n";
 
         //Septima operación
-        $concat=$num+$str;
+        $concat = intval($num) + intval($str);
         echo "<article>";
         echo '<p>El valor de $concat=$num+$str es: <span>="'. $num .'"+'. $str .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -77,7 +79,7 @@
         echo "\n";
 
         //Octava operación
-        $concat=$num+$cad;
+        $concat = $num + intval($cad);
         echo "<article>";
         echo '<p>El valor de $concat=$num+$cad es: <span>="'. $num .'"+'. $cad .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -85,7 +87,7 @@
         echo "\n";
 
         //Novena operación
-        $concat=$val+$str;
+        $concat = $val + floatval($str);
         echo "<article>";
         echo '<p>El valor de $concat=$val+$str es: <span>="'. $val .'"+'. $str .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -93,7 +95,7 @@
         echo "\n";
 
         //Decima operación
-        $concat=$str+$cad;
+        $concat = floatval($str) + intval($cad);
         echo "<article>";
         echo '<p>El valor de $concat=$str+$cad es: <span>="'. $str .'"+'. $cad .'</span>=<span>';
         echo $concat . '</span> y el tipo de dato es: <span>'. gettype($concat)."</span></p>". SALTO;
@@ -101,6 +103,6 @@
         echo "\n";
         echo '</section>';
         echo "\n";
-        ?>
+    ?>
 </body>
 </html>
